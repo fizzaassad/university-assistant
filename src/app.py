@@ -35,7 +35,11 @@ def load_rag_system():
     
     # Load all txt files from documents folder
     documents = []
-    docs_path = os.path.join(os.path.dirname(__file__), '..', 'documents')
+    # Get the root directory of the project
+root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+docs_path = os.path.join(root_dir, 'documents')
+st.write(f"Looking for documents in: {docs_path}")
+st.write(f"Files found: {glob.glob(os.path.join(docs_path, '*.txt'))}")
     
     for filepath in glob.glob(os.path.join(docs_path, "*.txt")):
         with open(filepath, "r", encoding="utf-8", errors="ignore") as f:
