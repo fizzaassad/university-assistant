@@ -1,5 +1,4 @@
 .env
-documents/
 __pycache__/
 *.pyc
 chroma_db/
