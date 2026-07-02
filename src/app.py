@@ -25,7 +25,7 @@ st.title("🎓 University & Visa Application Assistant")
 st.caption("Powered by real official documents — Germany focus, more countries coming soon")
 
 @st.cache_resource
-def load_rag_system():
+def load_rag_system_v2():
     # Find documents folder
     root_dir  = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     docs_path = os.path.join(root_dir, "documents")
@@ -107,7 +107,7 @@ Helpful Answer:"""
 # ── Load RAG system ────────────────────────────
 try:
     with st.spinner("Loading knowledge base from official documents..."):
-        chain, retriever, docs_path, num_chunks = load_rag_system()
+       chain, retriever, docs_path, num_chunks = load_rag_system_v2()
     st.success(f"Knowledge base loaded! {num_chunks} chunks from official documents.")
 except Exception as e:
     st.error(f"Error loading system: {e}")
