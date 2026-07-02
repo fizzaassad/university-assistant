@@ -147,9 +147,11 @@ if question:
             st.markdown("### Answer")
             st.write(answer)
 
-            st.markdown("### Sources Used")
-            for source in sources:
-                st.write(f"📄 {source}")
+            st.markdown("### Sources")
+            st.info("Answer based on official German Embassy and DAAD documents. Always verify with official sources:")
+            st.write("🔗 German Embassy Pakistan: [pakistan.diplo.de](https://pakistan.diplo.de)")
+            st.write("🔗 DAAD Scholarships: [daad.de](https://www.daad.de/en/)")
+            st.write("🔗 Study in Germany: [study-in-germany.de](https://www.study-in-germany.de)")
 
         except Exception as e:
             st.error(f"Error getting answer: {e}")
@@ -166,11 +168,11 @@ with st.sidebar:
     accurate answers from verified sources — not from AI memory.
     """)
 
-    st.markdown("### Documents Loaded")
-    root_dir  = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    docs_path = os.path.join(root_dir, "documents")
-    for f in glob.glob(os.path.join(docs_path, "*.txt")):
-        st.write(f"📄 {os.path.basename(f)}")
+    st.markdown("### Official Sources")
+    st.write("🔗 [German Embassy Pakistan](https://pakistan.diplo.de)")
+    st.write("🔗 [DAAD Scholarships](https://www.daad.de/en/)")
+    st.write("🔗 [Study in Germany](https://www.study-in-germany.de)")
+    st.write("🔗 [Make it in Germany](https://www.make-it-in-germany.com)")
 
     st.markdown("### Countries Covered")
     st.write("🇩🇪 Germany — more countries coming soon")
