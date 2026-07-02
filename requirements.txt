@@ -9,3 +9,4 @@ sentence-transformers
 groq
 python-dotenv
 streamlit
+langchain-huggingface

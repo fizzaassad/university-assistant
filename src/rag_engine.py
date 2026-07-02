@@ -16,9 +16,13 @@ CHROMA_DB_PATH   = r"C:\Users\HP\university_assistant\chroma_db"
 
 from langchain_community.embeddings import FakeEmbeddings
 
-def get_embeddings():
-    # Simple embeddings that work without downloading any model
-    return FakeEmbeddings(size=384)
+# Build vector store using sentence transformers
+from langchain_huggingface import HuggingFaceEmbeddings
+embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+vector_store = Chroma.from_documents(
+    documents=chunks,
+    embedding=embeddings
+)
 
 def build_vector_store(chunks):
     print("Building vector store...")
