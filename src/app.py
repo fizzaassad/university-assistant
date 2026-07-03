@@ -132,7 +132,7 @@ with col2:
         st.session_state.question = "What are the requirements and grade criteria for DAAD scholarship?"
     if st.button("🌍 Can I work while studying?"):
         st.session_state.question = "Can I work while studying in Germany and how many days per year?"
- st.caption("💡 Tip: Be specific in your questions for better answers. Example: 'What is the blocked account amount?' instead of 'How much money do I need?'")
+st.caption("💡 Tip: Be specific in your questions for better answers. Example: 'What is the blocked account amount?' instead of 'How much money do I need?'")
 
 
 # ── Question input ─────────────────────────────
