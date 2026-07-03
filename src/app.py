@@ -114,20 +114,25 @@ except Exception as e:
     st.stop()
 
 
-# ── Sample questions ───────────────────────────
-st.subheader("Ask a Question")
 st.markdown("**Try asking:**")
 
-col1, col2, col3 = st.columns(3)
+col1, col2 = st.columns(2)
 with col1:
-    if st.button("📄 What documents do I need?"):
+    if st.button("📄 What documents do I need for German visa?"):
         st.session_state.question = "What documents do I need for a German student visa?"
+    if st.button("💰 How much money for blocked account?"):
+        st.session_state.question = "What is the blocked account amount required for Germany and how much is the monthly withdrawal?"
+    if st.button("🎓 What DAAD scholarships exist?"):
+        st.session_state.question = "What DAAD scholarships are available for Pakistani Masters students in Germany?"
+
 with col2:
-    if st.button("💰 How much money do I need?"):
-        st.session_state.question = "How much money do I need to study in Germany?"
-with col3:
-    if st.button("🎓 What scholarships exist?"):
-        st.session_state.question = "What scholarships are available for Pakistani students in Germany?"
+    if st.button("🏫 Best universities for AI in Germany?"):
+        st.session_state.question = "What are the best universities for AI and Data Science Masters in Germany?"
+    if st.button("📝 What are DAAD requirements?"):
+        st.session_state.question = "What are the requirements and grade criteria for DAAD scholarship?"
+    if st.button("🌍 Can I work while studying?"):
+        st.session_state.question = "Can I work while studying in Germany and how many days per year?"
+        st.caption("💡 Tip: Be specific in your questions for better answers. Example: 'What is the blocked account amount?' instead of 'How much money do I need?'")
 
 
 # ── Question input ─────────────────────────────
