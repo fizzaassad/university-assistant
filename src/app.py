@@ -24,7 +24,7 @@ st.set_page_config(
 st.title("🎓 University & Visa Application Assistant")
 st.caption("Powered by real official documents — Germany focus, more countries coming soon")
 
-@st.cache_resource
+@st.cache_resource(ttl=300)
 def load_rag_system_v3():
     # Find documents folder
     root_dir  = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
